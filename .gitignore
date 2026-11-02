@@ -20,7 +20,9 @@ venv/
 # Local datasets, vector databases, caches, and benchmark output
 datasets/
 src/beir_scifact_rag/retrieval_db/
-evaluation_results/
+evaluation_results/*
+!evaluation_results/scifact/
+!evaluation_results/scifact/*
 
 # Local notes and operating-system files
 next.md

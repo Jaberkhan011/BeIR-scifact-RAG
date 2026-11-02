@@ -50,8 +50,9 @@ dense index. All generated files are local and ignored by Git.
 uv run python -m beir_scifact_rag.evaluation.run
 ```
 
-Results are written to `evaluation_results/scifact/`. By default, evaluation
-uses queries with at least two relevant documents and evaluates up to 50
+Results are written to `evaluation_results/scifact/`. The SciFact benchmark
+outputs are included in the repository for reproducibility. By default,
+evaluation uses queries with at least two relevant documents and evaluates up to 50
 queries. To evaluate all matching queries:
 
 ```bash
@@ -61,6 +62,12 @@ EVAL_QUERY_LIMIT=0 uv run python -m beir_scifact_rag.evaluation.run
 Reported metrics include Precision@10, Recall@10, Recall@100, MAP@10,
 MAP@100, MRR@10, NDCG@10, NDCG@100, Hit Rate@10, latency, and failed-query
 count.
+
+The published benchmark files are:
+
+- `evaluation_results/scifact/aggregate.csv` — aggregate metrics by retriever
+- `evaluation_results/scifact/per_query.csv` — per-query metrics
+- `evaluation_results/scifact/runs.json` — saved ranked results
 
 ## Source layout
 
@@ -80,7 +87,8 @@ The following local artifacts are intentionally excluded from commits:
 - `.env` and secret files
 - `datasets/`
 - `src/beir_scifact_rag/retrieval_db/`
-- `evaluation_results/`
+- generated evaluation output except the published SciFact benchmark in
+  `evaluation_results/scifact/`
 - local notes and OS metadata
 
 To inspect what would be committed before pushing:
