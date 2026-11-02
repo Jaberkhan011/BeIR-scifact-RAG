@@ -1,0 +1,28 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+
+# Local datasets, vector databases, caches, and benchmark output
+datasets/
+src/beir_scifact_rag/retrieval_db/
+evaluation_results/
+
+# Local notes and operating-system files
+next.md
+steps.md
+.DS_Store
